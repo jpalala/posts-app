@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "dev": "ng serve -o",
+    "dev": "NODE_ENV=dev && ng serve -o",
+    "dev:prod": "NODE_ENV=production && ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
