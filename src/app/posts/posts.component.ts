@@ -18,12 +18,10 @@ export class PostsComponent {
   constructor(private route: ActivatedRoute, private postService: PostService) {}
 
   ngOnInit() {
-    this.posts$ = this.route.paramMap.pipe(
-      switchMap(params => {
-        this.selectedId = Number(params.get('id'));
-        return this.postService.getPosts(0);
-      })
-    );
+    this.fetchPosts();
   }
-
+  fetchPosts(): void {
+    this.postService.getPosts()
+      .subscribe(posts => this.posts = posts.slice(1, 5));
+  }
 }

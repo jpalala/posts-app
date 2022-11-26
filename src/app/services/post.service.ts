@@ -19,8 +19,16 @@ export class PostService {
 
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
-  getPosts(page: number) {
-    return this.http.get(this.url + '?page=' + page);
+  getPosts(page: number = 0): Observable<Post[]> {
+    if(!page) {
+      return this.http.get<Post[]>(this.url)
+      .pipe(
+        tap(posts => this.log('fetched heroes')),
+        catchError(this.handleError('getHeroes', []))
+      );
+    }
+    // if paged (TODO)
+    return this.http.get<Post[]>(this.url + '?page=' + page);
   }
 
   getPost(id: number): Observable<Post> {
@@ -29,7 +37,10 @@ export class PostService {
       tap(_ => this.log(`fetched hero id=${id}`)),
       catchError(this.handleError<Post>(`getHero id=${id}`))
     );
-  
+  }
+
+  newPost(post: Post) {
+    
   }
 
   /** DELETE: delete the hero from the server */
