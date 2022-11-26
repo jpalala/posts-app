@@ -11,7 +11,7 @@ import { MessageService } from './message.service';
   providedIn: 'root'
 })
 export class PostService {
-  private url = 'http://jsonplaceholder.typicode.com/posts';
+  private url = 'https://jsonplaceholder.typicode.com/posts';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
