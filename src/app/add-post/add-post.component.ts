@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AddPostComponent {
 
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
+
 }
