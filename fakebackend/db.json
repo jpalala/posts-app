@@ -1,18 +1,38 @@
 {
  "posts": [
    { 
-     "id": 1,
-     "title": "nodejs",
-     "author": "typicode"
+    "userId": 1,
+    "id": 1,
+    "title": "nodejs",
+    "body": "hello world",
+    "author": "Typi Code"
    },
    {
+    "userId": 2,
      "id": 2,
      "title": "typescript",
+     "body": "hello world",
      "author": "glorious"
    },
    {
+    "userId": 3,
     "id": 3,
-    "title": "pokemon",
+    "title": "pokemo 1",
+    "body": "hello world 1",
+    "author": "satoshi tajiri"
+   },
+   {
+    "userId": 3,
+    "id": 4,
+    "title": "pokemon 2",
+    "body": "hello world 2",
+    "author": "satoshi tajiri"
+   },
+   {
+    "userId": 3,
+    "id": 5,
+    "title": "pokemon 3",
+    "body": "hello world 3",
     "author": "satoshi tajiri"
    }
  ]
